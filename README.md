@@ -9,7 +9,7 @@ Example:
 --------
 
 group1.aliases.drushrc.php
-
+```php
 $aliases['site1'] = array(
   'root' => '/var/www/drupal6',
   'remote-host' => 'host1',
@@ -21,13 +21,14 @@ $aliases['site2'] = array(
 $aliases['site3'] = array(
   'root' => '/var/www/dev',
 );
+```
 
 Then you can call:
 
-drush pm-updatestatus-combined @group1
+    $ drush pm-updatestatus-combined @group1
 
 or in short:
 
-drush upsc @group1
+    $ drush upsc @group1
 
 This will then collect update status information from all 3 sites, allthough they are use different Drupal versions and are hosted on different hosts. The drush command is optimized so that it does *not* collect status information from one and the same project more than once.
